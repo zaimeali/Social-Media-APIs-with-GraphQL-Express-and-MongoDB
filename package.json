@@ -1,0 +1,16 @@
+{
+  "name": "socialmedia",
+  "version": "1.0.0",
+  "description": "Social Media Website made with React, GraphQL, Express, Node, MongoDB Atlas",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "social",
+    "media",
+    "merng"
+  ],
+  "author": "zaime",
+  "license": "ISC"
+}
