@@ -1,16 +1,27 @@
 {
-  "name": "socialmedia",
-  "version": "1.0.0",
-  "description": "Social Media Website made with React, GraphQL, Express, Node, MongoDB Atlas",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "social",
-    "media",
-    "merng"
-  ],
-  "author": "zaime",
-  "license": "ISC"
+    "name": "socialmedia",
+    "version": "1.0.0",
+    "description": "Social Media Website made with React, GraphQL, Express, Node, MongoDB Atlas",
+    "main": "server.js",
+    "scripts": {
+        "start": "nodemon server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "social",
+        "media",
+        "merng"
+    ],
+    "author": "zaime",
+    "license": "ISC",
+    "dependencies": {
+        "apollo-server": "^2.22.2",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "graphql": "^15.5.0",
+        "mongodb": "^3.6.5",
+        "mongoose": "^5.12.3",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.7"
+    }
 }
