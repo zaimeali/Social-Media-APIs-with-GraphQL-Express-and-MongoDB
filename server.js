@@ -1,23 +1,18 @@
 require("dotenv").config();
-const { ApolloServer, gql } = require("apollo-server");
+const { ApolloServer } = require("apollo-server");
 const mongoose = require("mongoose");
 
-mongoose.connect(`${process.env.MONGO_URI}`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+// GraphQL
+const typeDefs = require("./graphql/typeDefs");
+const resolvers = require("./graphql/resolvers");
 
-// ! = required
-const typeDefs = gql `
-  type Query {
-    sayHi: String!
-  }
-`;
-const resolvers = {
-    Query: {
-        sayHi: () => "Hello World",
-    },
-};
+mongoose
+    .connect(`${process.env.MONGO_URI}`, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() => console.log("DB is Connected"))
+    .catch((err) => console.log(err));
 
 const server = new ApolloServer({
     typeDefs,
@@ -30,6 +25,6 @@ server
     .listen({
         port,
     })
-    .then((res) => {
+    .then(() => {
         console.log(`Server running at Port ${port}`);
     });
