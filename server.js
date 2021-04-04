@@ -17,6 +17,7 @@ mongoose
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    context: ({ req }) => ({ req }), // it will send req to every route
 });
 
 const port = 8001 || process.env.PORT;
